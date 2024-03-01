@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Details</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f2f2f2;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        
+        header {
+    display: flex;
+    align-items: center;
+    background-color: #333;
+    color: #fff;
+    padding: 1rem;
+    }
+
+header img {
+    max-width: 100px;
+    margin-right: 1rem;
+}
+
+header h1 {
+    margin: 0;
+}
+        
+        main {
+            flex: 1;
+            display: flex;
+            justify-content: space-between;
+            padding: 2rem;
+            align-items: flex-start;
+        }
+        
+        .product-image img {
+            max-width: 100%;
+            height: auto;
+            border: 1px solid #ccc;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        
+        .product-description {
+            flex: 1;
+            padding: 0 2rem;
+        }
+        
+        .product-actions {
+            flex: 1;
+            text-align: center;
+            padding: 0 2rem;
+        }
+        
+        .product-actions h2 {
+            color: #333;
+        }
+        
+        button {
+            background-color: #333;
+            color: #fff;
+            padding: 0.5rem 1rem;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        button:hover {
+            background-color: #555;
+        }
+    .bottom-section {
+        text-align: center;
+        margin-right: 300px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: center;
+        margin-top: auto; /* Pushes the section to the bottom */
+        padding: 2rem;
+        background-color: #fff;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+     
+
+        .rating {
+            flex:1;
+            text-align:center;
+            padding:0 2rem;
+    unicode-bidi: bidi-override;
+    direction: rtl;
+    text-align: center;
+  }
+
+  .rating > input {
+    display: none;
+  }
+
+  .rating > label {
+    display: inline-block;
+    margin: 0.2rem;
+    padding: 0;
+    width: 20px;
+    height:20px;
+    font-size: 2em;
+    font-family: 'Arial', sans-serif;
+    color: lightgray;
+    cursor: pointer;
+  }
+
+  .rating > label:before {
+    content: '★';
+  }
+
+  .rating > input:checked ~ label {
+    color: gold;
+  }
+        
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="index.html"><img src="images/main-logo1.png" alt="Company Logo"></a>
+        
+    </header>
+    <h1>Tips Of Simple Lifestyle
+    </h1>
+    <main>
+        <div class="product-image">
+            <img src="images/tab-item3.jpg" alt="Product Image">
+        </div>
+        <div class="product-description">
+            <h2>Description</h2>
+            <p>A practical guide that offers concise advice on simplifying your daily routines and adopting a more mindful and minimalist approach to life. With easy-to-implement tips, this book empowers readers to find balance, reduce stress, and embrace a simpler, more fulfilling lifestyle.</p>
+        </div>
+        <div class="rating">
+    <h2>RATING</h2>
+    <input type="radio" name="rating" id="star5" value="5"><label for="star5"></label>
+    <input type="radio" name="rating" id="star4" value="4"><label for="star4"></label>
+    <input type="radio" name="rating" id="star3" value="3"><label for="star3"></label>
+    <input type="radio" name="rating" id="star2" value="2"><label for="star2"></label>
+    <input type="radio" name="rating" id="star1" value="1"><label for="star1"></label>
+  </div>
+        <div class="product-actions">
+            <h2>Price: $X.XX</h2>
+            <button id="buy-now">Buy Now</button>
+            
+            <button id="add-to-cart">Add to Cart</button>   
+        </div>
+        
+    </main>
+
+    
+    <footer>
+        <p>&copy; 2023 BIBLIOREAD. All rights reserved.</p>
+    </footer>
+    <script>
+       document.addEventListener('DOMContentLoaded', () => {
+            const reviewForm = document.getElementById('reviewForm');
+            const reviewsList = document.getElementById('reviews');
+
+            reviewForm.addEventListener('submit', (event) => {
+                event.preventDefault();
+
+                const username = document.getElementById('username').value;
+                const reviewText = document.getElementById('review').value;
+
+                if (username.trim() === '' || reviewText.trim() === '') {
+                    alert('Please enter both your username and review.');
+                    return;
+                }
+
+                const reviewItem = document.createElement('li');
+                reviewItem.innerHTML = `<strong>${username}:</strong> ${reviewText}`;
+                reviewsList.appendChild(reviewItem);
+
+                reviewForm.reset();
+            });
+        });
+        // JavaScript code remains the same
+    </script>
+</body>
+</html>

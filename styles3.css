@@ -1,0 +1,33 @@
+/* Add your styles for the search bar and suggestions here */
+.search-container {
+    position: relative;
+    width: 300px;
+    margin: 20px auto;
+}
+
+#search-bar {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+}
+
+#suggestions {
+    position: absolute;
+    width: 100%;
+    background-color: #fff;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    border: 1px solid #ccc;
+    border-top: none;
+    display: none;
+}
+
+#suggestions li {
+    padding: 10px;
+    cursor: pointer;
+}
+
+#suggestions li:hover {
+    background-color: #f2f2f2;
+}
